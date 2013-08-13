@@ -22,10 +22,9 @@ return array(
                     'list' => array(
                         'type' => 'Zend\Mvc\Router\Http\Segment',
                         'options' => array(
-                            'route'    => '/deck[/][/:action][/][/:id][/]',
+                            'route'    => '/deck[/][:id][/]',
                             'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'         => '[0-9]*'
                             ),
                             'defaults' => array(
                                 'controller' => 'Api\Controller\Deck',
