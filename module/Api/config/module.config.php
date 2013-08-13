@@ -10,12 +10,27 @@
 return array(
     'router' => array(
         'routes' => array(
-            'desck' => array(
+            'api' => array(
                 'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
-                    'route'    => '/deck[/:id]',
+                    'route' => '/api',
                     'defaults' => array(
-                        'controller' => 'Api\Controller\Deck',
+                    ),
+                ),
+                'may_terminate' => false,
+                'child_routes' => array(
+                    'list' => array(
+                        'type' => 'Zend\Mvc\Router\Http\Segment',
+                        'options' => array(
+                            'route'    => '/deck[/][/:action][/][/:id][/]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Api\Controller\Deck',
+                            ),
+                        ),
                     ),
                 ),
             ),
