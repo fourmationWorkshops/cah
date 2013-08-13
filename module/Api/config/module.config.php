@@ -43,4 +43,15 @@ return array(
             'ViewJsonStrategy',
         ),
     ),
+    'service_manager' => array(
+        'invokables' => array(
+            'Api\Form\Card' => 'Api\Form\Card',
+            'Api\Form\CardFilter' => 'Api\Form\CardFilter',
+            'Api\Mapper\Card' => 'Api\Mapper\Card',
+            'Api\Entity\Card' => 'Api\Entity\Card',
+        ),
+        'factories' => array(
+            'CardService' => 'Api\Service\Factory\CardServiceFactory',
+        ),
+    ),
 );
