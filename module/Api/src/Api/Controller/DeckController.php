@@ -26,6 +26,10 @@ class DeckController extends AbstractRestfulController
 
     public function get($id)
     {
+
+        $service = $this->getServiceLocator ()->get ( 'CardService' );
+
+
         return new JsonModel();
     }
 
