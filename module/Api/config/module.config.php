@@ -15,7 +15,7 @@ return array(
                 'options' => array(
                     'route'    => '/deck',
                     'defaults' => array(
-                        'controller' => 'Api\Controller\Deck',
+                        'controller' => 'api\Controller\Deck',
                         'action'     => 'index',
                     ),
                 ),
@@ -36,6 +36,12 @@ return array(
         'template_map' => array(
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+        ),
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+        'strategies'=> array(
+            'ViewJsonStrategy',
         ),
     ),
 );
