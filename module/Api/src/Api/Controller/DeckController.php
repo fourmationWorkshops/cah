@@ -9,12 +9,37 @@
 
 namespace Api\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel;
+use Zend\Mvc\Controller\AbstractRestfulController;
 
-class DeckController extends AbstractActionController
+class DeckController extends AbstractRestfulController
 {
     public function indexAction()
+    {
+
+    }
+
+    public function getList()
+    {
+        return new JsonModel(array('test' => 'val'));
+    }
+
+    public function get($id)
+    {
+        return new JsonModel();
+    }
+
+    public function create($data)
+    {
+        return new JsonModel();
+    }
+
+    public function delete($id)
+    {
+        return new JsonModel();
+    }
+
+    public function update($id, $data)
     {
         return new JsonModel();
     }
